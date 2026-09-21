@@ -1,0 +1,26 @@
+{
+  "name": "document-db-api",
+  "version": "1.0.0",
+  "description": "DocumentDB API with Hono",
+  "main": "dist/index.js",
+  "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "seed": "tsx src/seed.ts",
+    "setup-index": "tsx src/setup_indexes.ts",
+    "load-test": "tsx src/load_test.ts",
+    "benchmark": "tsx src/benchmark.ts"
+  },
+  "dependencies": {
+    "@hono/node-server": "^1.12.0",
+    "dotenv": "^16.4.5",
+    "hono": "^4.5.0",
+    "mongodb": "^6.8.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.12.0",
+    "tsx": "^4.16.0",
+    "typescript": "^5.5.0"
+  }
+}
