@@ -19,7 +19,6 @@ const seedDatabase = async () => {
     for (let j = 0; j < batchSize; j++) {
       const index = i + j + 1; // start doc_1 to doc_100000
       batch.push({
-        _id: `doc_${index}`,
         root_id: `${index % 100}`,
         tableName: "Workflows",
         columns: ["workflowID", "ns_id", "ws_id", "createPermission", "readPermission", "updatePermission", "deletePermission"],

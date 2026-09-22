@@ -9,7 +9,7 @@ export interface WorkflowRow {
 }
 
 export interface WorkflowDocument {
-  _id: string; // The doc_id mentioned in user's prompt (e.g. "doc_101")
+  _id?: string | any; // MongoDB will auto-generate an ObjectId if omitted
   root_id: string;
   tableName: string;
   columns: string[];
