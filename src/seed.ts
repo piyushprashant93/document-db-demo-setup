@@ -21,7 +21,6 @@ const seedDatabase = async () => {
       batch.push({
         root_id: `${index % 100}`,
         tableName: "Workflows",
-        columns: ["workflowID", "ns_id", "ws_id", "createPermission", "readPermission", "updatePermission", "deletePermission"],
         rows: [
           { workflowID: `W01_${index}`, ns_id: null, ws_id: null, createPermission: true, readPermission: true, updatePermission: true, deletePermission: true },
           { workflowID: `W02_${index}`, ns_id: null, ws_id: null, createPermission: true, readPermission: false, updatePermission: true, deletePermission: true },

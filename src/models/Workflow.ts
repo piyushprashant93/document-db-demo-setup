@@ -12,6 +12,5 @@ export interface WorkflowDocument {
   _id?: string | any; // MongoDB will auto-generate an ObjectId if omitted
   root_id: string;
   tableName: string;
-  columns: string[];
   rows: WorkflowRow[];
 }

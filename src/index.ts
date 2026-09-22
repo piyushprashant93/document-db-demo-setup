@@ -1,6 +1,7 @@
 import { serve } from '@hono/node-server';
 import { Hono } from 'hono';
 import { connectDB, getDB } from './db/mongo';
+import { ObjectId } from 'mongodb';
 import type { WorkflowDocument } from './models/Workflow';
 
 const app = new Hono();
@@ -37,7 +38,7 @@ app.get('/workflows/:id', async (c) => {
     const collection = db.collection<WorkflowDocument>('workflows');
 
     // Query DocumentDB for the specific document
-    const workflow = await collection.findOne({ _id: id });
+    const workflow = await collection.findOne({ _id: new ObjectId(id) });
     
     if (!workflow) {
       return c.json({ success: false, message: 'Not found' }, 404);
